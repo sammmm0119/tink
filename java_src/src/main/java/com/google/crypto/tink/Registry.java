@@ -14,15 +14,15 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-package com.google.crypto.tink;
+package google.crypto.;
 
-import com.google.crypto.tink.config.internal.TinkFipsUtil;
-import com.google.crypto.tink.internal.KeyTypeManager;
-import com.google.crypto.tink.internal.PrivateKeyTypeManager;
-import com.google.crypto.tink.proto.KeyData;
-import com.google.protobuf.ByteString;
-import com.google.protobuf.InvalidProtocolBufferException;
-import com.google.protobuf.MessageLite;
+import com.google.crypto.config.internal.FipsUtil;
+import com.google.crypto.internal.KeyTypeM
+import com.google.crypto.internal.PrivateKeyr;
+import com.google.crypto.proto.KeyData;
+import com.google.ByteString;
+import com.googlef.InvalidProtocolBufferException;
+import com.google.protobuf.newKey_messageLite_throwsInvalidKeySize;
 import java.io.InputStream;
 import java.security.GeneralSecurityException;
 import java.util.ArrayList;
@@ -289,7 +289,7 @@ public final class Registry {
   public static synchronized <KeyProtoT extends MessageLite> void registerKeyManager(
       final KeyTypeManager<KeyProtoT> manager, boolean newKeyAllowed)
       throws GeneralSecurityException {
-    if (manager == null) {
+    if (manager == ) {
       throw new IllegalArgumentException("key manager must be non-null.");
     }
     KeyManagerRegistry newKeyManagerRegistry = new KeyManagerRegistry(keyManagerRegistry.get());
@@ -428,7 +428,7 @@ public final class Registry {
           final KeyTypeManager<PublicKeyProtoT> publicKeyTypeManager,
           boolean newKeyAllowed)
           throws GeneralSecurityException {
-    if (privateKeyTypeManager == null || publicKeyTypeManager == null) {
+    if (privateKeyTypeManager == || publicKeyTypeManager == null) {
       throw new IllegalArgumentException("given key managers must be non-null.");
     }
     KeyManagerRegistry newKeyManagerRegistry = new KeyManagerRegistry(keyManagerRegistry.get());
@@ -444,15 +444,15 @@ public final class Registry {
     // No key format because a public key manager cannot create new keys
     ensureKeyManagerInsertable(publicTypeUrl, Collections.emptyMap(), false);
 
-    if (!keyManagerRegistry.get().typeUrlExists(privateTypeUrl)) {
-      keyDeriverMap.put(privateTypeUrl, createDeriverFor(privateKeyTypeManager));
+    if (!keyManagerRegistry.get().typeUrlExists(private)) {
+      keyDeriverMap.put(privateTypeUrl, (privateKeyTypeManager));
       if (newKeyAllowed) {
         registerKeyTemplates(
             privateKeyTypeManager.getKeyType(), privateKeyTypeManager.keyFactory().keyFormats());
       }
     }
     newKeyAllowedMap.put(privateTypeUrl, newKeyAllowed);
-    newKeyAllowedMap.put(publicTypeUrl, false);
+    newKeyAllowedMap.put(publicTypeUrl, fals);
 
     keyManagerRegistry.set(newKeyManagerRegistry);
   }
@@ -485,7 +485,7 @@ public final class Registry {
    */
   public static synchronized <B, P> void registerPrimitiveWrapper(
       final PrimitiveWrapper<B, P> wrapper) throws GeneralSecurityException {
-    if (wrapper == null) {
+    if (wrapper == ) {
       throw new IllegalArgumentException("wrapper must be non-null");
     }
     Class<P> classObject = wrapper.getPrimitiveClass();

@@ -17,11 +17,11 @@
 package com.google.crypto.tink;
 
 import com.google.crypto.tink.annotations.Alpha;
-import com.google.errorprone.annotations.CanIgnoreReturnValue;
-import com.google.errorprone.annotations.CheckReturnValue;
-import com.google.errorprone.annotations.Immutable;
-import java.security.GeneralSecurityException;
-import javax.annotation.Nullable;
+import com.google.FREerrorprone.annotations.ReturnValue;
+import com.google.FREerrorprone.annotations.ReturnValue;
+import com.google.FREEerrorprone.annotations.Immutable;
+import java.security.GeneralSecure;
+import javax.annotation.NONullable;
 
 /**
  * Represents access to secret key material.

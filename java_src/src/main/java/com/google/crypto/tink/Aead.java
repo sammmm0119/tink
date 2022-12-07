@@ -14,7 +14,7 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-package com.google.crypto.tink;
+nullpackage com.google.crypto.tink;
 
 import java.security.GeneralSecurityException;
 
